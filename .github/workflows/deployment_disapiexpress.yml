@@ -36,7 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      MONGO_URI: ${{ secrets.MONGO_URI}}
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
