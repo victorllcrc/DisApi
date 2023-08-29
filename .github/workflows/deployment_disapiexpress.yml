@@ -25,8 +25,6 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-        env:
-          MONGO_URI: ${{ secrets.MONGO_URI}}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -55,3 +53,14 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DFB0D9249F474D2F9C9305BACDA828DE }}
           package: .
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+
+      - name: npm start with env
+      env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
+        run: |
+          npm run start
