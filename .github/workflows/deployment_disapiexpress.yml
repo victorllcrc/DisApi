@@ -60,7 +60,7 @@ jobs:
           node-version: '18.x'
 
       - name: npm start with env
-      env:
-        MONGO_URI: ${{ secrets.MONGO_URI }}
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           npm run start
