@@ -25,6 +25,8 @@ jobs:
         run: |
           npm install
           npm run build --if-present
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI}}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
