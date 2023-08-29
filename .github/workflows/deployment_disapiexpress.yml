@@ -27,9 +27,9 @@ jobs:
 
       - name: ENV
         run: |
-          echo "MONGO_URI=${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DFB0D9249F474D2F9C9305BACDA828DE }}" >> .env
+          echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> .env
         env:
-          MONGO_URI: ${{ secrets.secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DFB0D9249F474D2F9C9305BACDA828DE }}
+          MONGO_URI: ${{ secrets.MONGO_URI }}
 
       - name: build
         run: |
