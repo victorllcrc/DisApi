@@ -28,6 +28,10 @@ route.get('/update-user', services.update_user)
 
 //API
 
+// Login
+route.post('/api/signup', authController.singUp)
+route.post('/api/signin', authController.singIn)
+
 // Rutas para el modelo User
 route.post('/api/users', userController.createUser);
 route.get('/api/users', userController.getUsers);
